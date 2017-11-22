@@ -80,13 +80,13 @@
     {{/frost-button}}
   {{/frost-popover}}
 {{/frost-button}}
-<br />
+<br>
 {{#frost-button hook='resizeEnabledButton' size='small' priority='primary' class='resize-on' text='Resize Enabled'}}
   {{#frost-popover target='.resize-on' closest=true resize=true position='left'}}
     <span class='inside'>Extra long content that would require resizing to be visible</span>
   {{/frost-popover}}
 {{/frost-button}}
-<br />
+<br>
 {{#frost-button hook='resizeDisabledButton' size='small' priority='primary' class='resize-off' text='Resize Disabled'}}
   {{#frost-popover target='.resize-off' closest=true resize=false position='left'}}
     <span class='inside'>Extra long content that would require resizing to be visible</span>
@@ -123,4 +123,17 @@
   {{#frost-popover target='.toggle-functions-button' onDisplay=(action 'onDisplay') onHide=(action 'onHide')}}
     <span class='toggle-content'>Scary monster! RAWRR!</span>
   {{/frost-popover}}
+</div>
+
+<h2>Event Propogation</h2>
+<div class='event-propogation-container' onclick="alert('Propgated')" style="position: relative;">
+  {{frost-button hook='propogateButton' size='small' priority='primary' class='propogate' text='Allow Propogation'}}
+  {{#frost-popover target='.propogate' position='auto'}}
+    <span class='inside'>Allowed Propogation</span>
+  {{/frost-popover}}
+  {{#frost-button hook='stopPropogateButton' size='small' priority='primary' class='stop-propogate' text='Stop Propogation'}}
+    {{#frost-popover target='.stop-propogate' position='auto' closest=true stopPropagation=true}}
+      <span class='inside'>Stopped Propogation</span>
+    {{/frost-popover}}
+  {{/frost-button}}
 </div>
